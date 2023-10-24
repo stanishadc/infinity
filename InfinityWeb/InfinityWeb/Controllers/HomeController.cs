@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
 
@@ -26,6 +26,7 @@ namespace InfinityWeb.Controllers
             _configuration = configuration;
         }
         [HttpPost]
+        [Route("login")]
         public async Task<IActionResult> Login(Login model)
         {
             if (model.Email == null)
@@ -64,7 +65,7 @@ namespace InfinityWeb.Controllers
                             loginResponse.Role = roleName;
                             loginResponse.Status = true;
                             loginResponse.Name = user.Name;
-                            var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Lead" });
+                            var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Dashboard" });
                             return RedirectToRoute(routeValue);
                         }
                         else
@@ -84,6 +85,60 @@ namespace InfinityWeb.Controllers
                 }
             }
             return View("Index", model);
+        }
+        [HttpPost]
+        [Route("register")]
+        public async Task<IActionResult> Register([FromForm] Register model)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(model.Email))
+                {
+                    return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = "Email is mandatory!" });
+                }
+                if (string.IsNullOrEmpty(model.Password))
+                {
+                    return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = "Password is mandatory!" });
+                }
+
+                #region user creation
+                var userExists = await _userManager.FindByNameAsync(model.Email);
+                if (userExists != null)
+                {
+                    return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = "Email already exists!" });
+                }
+                else
+                {
+                    User user = new()
+                    {
+                        Email = model.Email,
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        UserName = model.Email,
+                        PhoneNumber = model.PhoneNumber,
+                        Name = model.Name
+                    };
+
+                    var result = await _userManager.CreateAsync(user, model.Password);
+
+                    if (!result.Succeeded)
+                    {
+                        return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = "User creation failed! Please check user details and try again." });
+                    }
+                    if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                    }
+                    await _userManager.AddToRoleAsync(user, UserRoles.User);
+
+                }
+                #endregion
+                //var bemail = Task.Factory.StartNew(() => _emailSender.SendBusinessRegisterEmail(model.Email, model.BusinessName));
+                return Ok(new { StatusCode = HttpStatusCode.OK, Data = "Account Created Successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = ex.Message });
+            }
         }
 
         public IActionResult Index()

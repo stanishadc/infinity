@@ -2,6 +2,7 @@
 using InfinityWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace InfinityWeb.Controllers
 {
@@ -17,7 +18,6 @@ namespace InfinityWeb.Controllers
             return View();
         }
         [HttpGet]
-        [Route("Get")]
         public async Task<IActionResult> Get()
         {
             var data = await (from p in _context.GroupTypes
@@ -29,7 +29,6 @@ namespace InfinityWeb.Controllers
             return View(data);
         }
         [HttpGet]
-        [Route("GetById")]
         public async Task<IActionResult> GetById(Guid GroupTypeId)
         {
             var data = await (from p in _context.GroupTypes
@@ -41,7 +40,6 @@ namespace InfinityWeb.Controllers
             return View(data);
         }
         [HttpPost]
-        [Route("Insert")]
         public IActionResult Insert(GroupType model)
         {
             try
@@ -57,8 +55,7 @@ namespace InfinityWeb.Controllers
                 return View("Index", ex.Message);
             }
         }
-        [HttpPost]
-        [Route("Insert")]
+        [HttpPut]
         public IActionResult Update(GroupType model)
         {
             try
@@ -80,6 +77,28 @@ namespace InfinityWeb.Controllers
             catch (Exception ex)
             {
                 return View("Index", ex.Message);
+            }
+        }
+        [HttpDelete]
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            try
+            {
+                var data = await _context.GroupTypes.FindAsync(Id);
+                if (data == null)
+                {
+                    return View("Index", "Record not exists!");
+                }
+                else
+                {
+                    _context.GroupTypes.Remove(data);
+                    await _context.SaveChangesAsync();
+                    return View("Index", "Record Deleted!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return View("Index", "Error in deleting the record!");
             }
         }
     }
