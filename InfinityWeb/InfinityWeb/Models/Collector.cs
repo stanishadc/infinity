@@ -7,24 +7,25 @@ namespace InfinityWeb.Models
     {
         [Key]
         public Guid CollectorId { get; set; }
-        public DateTime CreatedDate { get; set; }
         public Guid BranchId { get; set; }
 
-        [Column(TypeName = "varchar(100)")]
-        public string Address { get; set; }
+        [Column(TypeName = "varchar(200)")]
+        public string? Address { get; set; }
+
+        [Column(TypeName = "varchar(45)")]
+        public string? PrimaryContact { get; set; }
+
+        [Column(TypeName = "varchar(45)")]
+        public string? Email { get; set; }
+
+        [Column(TypeName = "varchar(15)")]
+        public string? Phone { get; set; }
+
+        public Guid UserId { get; set; }
         
-        public Guid ItemId { get; set; }
-        
-        [Column(TypeName = "varchar(100)")]
-        public string Requested { get; set; }
+        public string? CollectionNotes { get; set; }
 
-        [Column(TypeName = "varchar(25)")]
-        public string Driver { get; set; }
-
-        [Column(TypeName = "varchar(100)")]
-        public string Collected { get; set; }
-
-        [Column(TypeName = "varchar(100)")]
-        public string Notes { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }

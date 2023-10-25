@@ -124,11 +124,11 @@ namespace InfinityWeb.Controllers
                     {
                         return Ok(new { StatusCode = HttpStatusCode.InternalServerError, Data = "User creation failed! Please check user details and try again." });
                     }
-                    if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+                    if (!await _roleManager.RoleExistsAsync(model.RoleName))
                     {
-                        await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                        await _roleManager.CreateAsync(new IdentityRole(model.RoleName));
                     }
-                    await _userManager.AddToRoleAsync(user, UserRoles.User);
+                    await _userManager.AddToRoleAsync(user, model.RoleName);
 
                 }
                 #endregion
