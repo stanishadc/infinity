@@ -51,6 +51,11 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
+builder.Services.AddMvc();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(2);
+});
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
      opt.TokenLifespan = TimeSpan.FromHours(2));
 var app = builder.Build();
@@ -72,7 +77,7 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseSession();
 app.UseRouting();
 app.MapControllerRoute(
     name: "default",
