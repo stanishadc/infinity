@@ -1,5 +1,6 @@
 ﻿using Azure;
 using InfinityWeb.Models;
+using InfinityWeb.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -13,57 +14,61 @@ namespace InfinityWeb.Controllers
         {
             _context = context;
         }
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
-        }
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var data = await (from p in _context.GroupTypes
-                              select new
-                              {
-                                  p.GroupTypeId,
-                                  p.GroupTypeName
-                              }).ToListAsync();
+            var data = GetGroupTypes();
             return View(data);
         }
         [HttpGet]
-        public async Task<IActionResult> GetById(Guid GroupTypeId)
+        public IActionResult Create()
         {
-            var data = await (from p in _context.GroupTypes
-                              select new
-                              {
-                                  p.GroupTypeId,
-                                  p.GroupTypeName
-                              }).Where(p => p.GroupTypeId == GroupTypeId).ToListAsync();
-            return View(data);
+            GroupType groupType=new GroupType();
+            return PartialView("_CreateModalPartial", groupType);
         }
+        
         [HttpPost]
-        public IActionResult Insert(GroupType model)
+        public IActionResult Create(GroupType groupType)
         {
             try
-            {
-                model.GroupTypeId = Guid.NewGuid();
-                model.LastUpdated = DateTime.UtcNow;
-                _context.Add(model);
-                _context.SaveChanges();
-                return View(model);
+            {                
+                if (ModelState.IsValid)
+                {
+                    groupType.GroupTypeId = Guid.NewGuid();
+                    groupType.LastUpdated = DateTime.UtcNow;
+                    _context.Add(groupType);
+                    _context.SaveChanges();
+                    ModelState.Clear();
+                    TempData["successMessage"] = "New Record Inserted";
+                    return RedirectToAction("Index", "GroupType");
+                }
+                else
+                {
+                    TempData["errorMessage"] = "Please check the mandatory fields";
+                    return PartialView("_CreateModalPartial", groupType);
+                }
             }
             catch (Exception ex)
             {
-                return View("Index", ex.Message);
+                TempData["errorMessage"] = ex.Message;
+                return PartialView("_CreateModalPartial", groupType);
             }
         }
-        [HttpPut]
-        public IActionResult Update(GroupType model)
+        [HttpGet]
+        public IActionResult Edit(Guid GroupTypeId)
+        {
+            var data = _context.GroupTypes.Where(x => x.GroupTypeId == GroupTypeId).FirstOrDefault();
+            return PartialView("_EditModalPartial", data);
+        }
+        [HttpPost]
+        public IActionResult Edit(GroupType model)
         {
             try
             {
                 var data = _context.GroupTypes.Where(z => z.GroupTypeId == model.GroupTypeId).AsNoTracking().FirstOrDefault();
                 if (data == null)
                 {
-                    return View("Index", "Record not exists!");
+                    TempData["errorMessage"] = "Record not exists!";
                 }
                 else
                 {
@@ -71,35 +76,35 @@ namespace InfinityWeb.Controllers
                     data.LastUpdated = DateTime.UtcNow;
                     _context.Entry(data).State = EntityState.Modified;
                     _context.SaveChanges();
-                    return View("Index", "Record Updated Successfully");
+                    ModelState.Clear();
+                    TempData["successMessage"] = "Record Updated Successfully";                    
                 }
             }
             catch (Exception ex)
             {
-                return View("Index", ex.Message);
+                TempData["errorMessage"] = ex.Message;
             }
+            return RedirectToAction("Index", "GroupType");
         }
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Guid Id)
+        [HttpPost]
+        public IActionResult Delete(GroupType groupType)
         {
             try
             {
-                var data = await _context.GroupTypes.FindAsync(Id);
-                if (data == null)
-                {
-                    return View("Index", "Record not exists!");
-                }
-                else
-                {
-                    _context.GroupTypes.Remove(data);
-                    await _context.SaveChangesAsync();
-                    return View("Index", "Record Deleted!");
-                }
+                _context.GroupTypes.Remove(groupType);
+                _context.SaveChanges();
+                ModelState.Clear();
+                TempData["successMessage"] = "Record Deleted!";
             }
             catch (Exception ex)
             {
-                return View("Index", "Error in deleting the record!");
+                TempData["errorMessage"] = "Error in deleting the record!";
             }
+            return RedirectToAction("Index", "GroupType");
+        }
+        private List<GroupType> GetGroupTypes()
+        {
+            return _context.GroupTypes.OrderBy(o => o.LastUpdated).ToList();
         }
     }
 }

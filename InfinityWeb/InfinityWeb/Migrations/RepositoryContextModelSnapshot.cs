@@ -104,8 +104,9 @@ namespace InfinityWeb.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("GroupTypeName")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("GroupTypeName")
+                        .IsRequired()
+                        .HasColumnType("varchar(25)");
 
                     b.Property<DateTime?>("LastUpdated")
                         .HasColumnType("datetime2");

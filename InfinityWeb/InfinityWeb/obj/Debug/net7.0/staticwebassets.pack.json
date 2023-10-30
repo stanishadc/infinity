@@ -2229,6 +2229,14 @@
       "PackagePath": "staticwebassets\\assets\\js\\app.js"
     },
     {
+      "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\custom\\grouptype.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\grouptype.js"
+    },
+    {
+      "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\custom\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom\\jquery-3.7.1.min.js"
+    },
+    {
       "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\layout.js",
       "PackagePath": "staticwebassets\\assets\\js\\layout.js"
     },
@@ -2743,10 +2751,6 @@
     {
       "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\json\\customer-list.json",
       "PackagePath": "staticwebassets\\assets\\json\\customer-list.json"
-    },
-    {
-      "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\json\\datatable.json",
-      "PackagePath": "staticwebassets\\assets\\json\\datatable.json"
     },
     {
       "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\json\\filemanager-filelist.json",

@@ -1,0 +1,26 @@
+﻿@model GroupType
+<div id="EditGroupType-@Model.GroupTypeId" class="modal fade" aria-hidden="true" aria-labelledBy="UpdateGroupType">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0">Update Group Type</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Edit" method="post" asp-controller="GroupType">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade-show"></div>
+                    <input type="hidden" asp-for="GroupTypeId" />
+                    <div class="mb-3">
+                        <label asp-for="GroupTypeName" class="form-label">Group Type</label>
+                        <input type="text" class="form-control" asp-for="GroupTypeName" name="GroupTypeName" placeholder="Enter Group Type">
+                        <span asp-validation-for="GroupTypeName" class="text-danger"></span>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success">Update Changes</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

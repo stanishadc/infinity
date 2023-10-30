@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cPXW//3YtOym4PgGacdZ1A+heR04VgPYk1IFbPmHsgQ=",
+  "Hash": "mSCeDoLrw1ytLZS/yESju5ZDsIU8TVeuDVIcu0pPPVE=",
   "Source": "InfinityWeb",
   "BasePath": "_content/InfinityWeb",
   "Mode": "Default",
@@ -9503,6 +9503,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\app.js"
     },
     {
+      "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\custom\\grouptype.js",
+      "SourceId": "InfinityWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\",
+      "BasePath": "_content/InfinityWeb",
+      "RelativePath": "assets/js/custom/grouptype.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\grouptype.js"
+    },
+    {
+      "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\custom\\jquery-3.7.1.min.js",
+      "SourceId": "InfinityWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\",
+      "BasePath": "_content/InfinityWeb",
+      "RelativePath": "assets/js/custom/jquery-3.7.1.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom\\jquery-3.7.1.min.js"
+    },
+    {
       "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\js\\layout.js",
       "SourceId": "InfinityWeb",
       "SourceType": "Discovered",
@@ -11694,23 +11728,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\json\\customer-list.json"
-    },
-    {
-      "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\json\\datatable.json",
-      "SourceId": "InfinityWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\",
-      "BasePath": "_content/InfinityWeb",
-      "RelativePath": "assets/json/datatable.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\json\\datatable.json"
     },
     {
       "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\json\\filemanager-filelist.json",
