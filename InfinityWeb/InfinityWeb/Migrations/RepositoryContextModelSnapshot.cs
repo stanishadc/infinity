@@ -56,9 +56,6 @@ namespace InfinityWeb.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("BranchId");
 
                     b.HasIndex("GroupId");
@@ -82,11 +79,8 @@ namespace InfinityWeb.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(45)");
 
-                    b.Property<Guid>("GroupTypeId")
+                    b.Property<Guid?>("GroupTypeId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -335,9 +329,7 @@ namespace InfinityWeb.Migrations
                 {
                     b.HasOne("InfinityWeb.Models.GroupType", "GroupType")
                         .WithMany()
-                        .HasForeignKey("GroupTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupTypeId");
 
                     b.Navigation("GroupType");
                 });

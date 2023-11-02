@@ -23,10 +23,8 @@ namespace InfinityWeb.Models
         [Column(TypeName = "varchar(15)")]
         public string? Phone { get; set; }
 
-        public Guid UserId { get; set; }
-
         public Guid GroupId {  get; set; }
-        public Group Group { get; set; }
+        public Group? Group { get; set; }
         public string? CollectionNotes { get; set; }
 
         public DateTime CreatedDate { get; set; }

@@ -22,7 +22,7 @@
     <!-- App Css-->
     <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="~/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/custom.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     @{
@@ -124,12 +124,12 @@
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link">
+                            <a class="nav-link menu-link" asp-controller="GroupType" asp-action="Index">
                                 <i class="ri-user-line"></i>Group Types
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link">
+                            <a class="nav-link menu-link" asp-controller="Group" asp-action="Index">
                                 <i class="ri-group-2-fill"></i>Group
                             </a>
                         </li>
@@ -139,7 +139,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link">
+                            <a class="nav-link menu-link" asp-controller="Collector" asp-action="Index">
                                 <i class="ri-truck-fill"></i>Collectors
                             </a>
                         </li>
@@ -149,7 +149,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link menu-link">
+                            <a class="nav-link menu-link" asp-controller="Branch" asp-action="Index">
                                 <i class=" ri-home-8-fill"></i>Branches
                             </a>
                         </li>

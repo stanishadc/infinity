@@ -11,10 +11,9 @@ namespace InfinityWeb.Models
         public string GroupName { get; set; }
         [Column(TypeName = "varchar(200)")]
         public string? Address { get; set; }
-        public Guid GroupTypeId { get; set; }
-        public GroupType GroupType { get; set; }
+        public Guid? GroupTypeId { get; set; }
+        public GroupType? GroupType { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set;}
-        public bool? IsActive { get; set; }
     }
 }

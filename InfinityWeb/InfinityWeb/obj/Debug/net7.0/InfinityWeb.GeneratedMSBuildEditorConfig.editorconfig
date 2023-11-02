@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Developerscode\Projects\upwork_Ian\InfinityWeb\InfinityWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +50,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/GroupType/_EditModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBUeXBlXF9FZGl0TW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcX0RlbGV0ZU1vZGFsUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Home/Index.cshtml]

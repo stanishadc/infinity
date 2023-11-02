@@ -77,7 +77,7 @@ namespace InfinityWeb.Controllers
                     _context.Entry(data).State = EntityState.Modified;
                     _context.SaveChanges();
                     ModelState.Clear();
-                    TempData["successMessage"] = "Record Updated Successfully";                    
+                    TempData["successMessage"] = "Record Updated Successfully";
                 }
             }
             catch (Exception ex)
