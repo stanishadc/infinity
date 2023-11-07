@@ -14,6 +14,9 @@ namespace InfinityWeb.Models
         public DbSet<GroupType> GroupTypes { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Branch> Branches { get; set; }
-
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Collector> Collectors { get; set; }
+        public DbSet<EndUser> EndUsers { get; set; }
+        public DbSet<Business> Businesses { get; set; }
     }
 }

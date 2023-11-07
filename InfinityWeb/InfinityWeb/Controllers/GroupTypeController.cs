@@ -1,4 +1,5 @@
 ﻿using Azure;
+using InfinityWeb.Helpers;
 using InfinityWeb.Models;
 using InfinityWeb.ViewModel;
 using Microsoft.AspNetCore.Mvc;
@@ -10,14 +11,26 @@ namespace InfinityWeb.Controllers
     public class GroupTypeController : Controller
     {
         private readonly RepositoryContext _context;
+        private readonly DataConversions dataConversions;
         public GroupTypeController(RepositoryContext context)
         {
             _context = context;
+            dataConversions = new DataConversions();
         }
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = GetGroupTypes();
+            if (HttpContext.Session.GetString("UserId") == null)
+            {
+                var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Home" });
+                return RedirectToRoute(routeValue);
+            }
+            if (HttpContext.Session.GetString("Token") == null)
+            {
+                var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Home" });
+                return RedirectToRoute(routeValue);
+            }
+            var data = await GetGroupTypes();
             return View(data);
         }
         [HttpGet]
@@ -102,9 +115,16 @@ namespace InfinityWeb.Controllers
             }
             return RedirectToAction("Index", "GroupType");
         }
-        private List<GroupType> GetGroupTypes()
+        private async Task<List<GroupType>> GetGroupTypes()
         {
-            return _context.GroupTypes.OrderBy(o => o.LastUpdated).ToList();
+            var data = await (from gt in _context.GroupTypes
+                             select new GroupType 
+                             {
+                                 GroupTypeId= gt.GroupTypeId,
+                                 GroupTypeName = gt.GroupTypeName,
+                                 LastUpdated = dataConversions.ConvertUTCtoLocal(gt.LastUpdated)
+                             }).ToListAsync();
+            return data;
         }
     }
 }

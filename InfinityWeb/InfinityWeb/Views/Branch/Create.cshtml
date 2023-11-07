@@ -1,4 +1,4 @@
-﻿@model InfinityWeb.ViewModel.BranchViewModal
+﻿@model InfinityWeb.ViewModel.ClientBranchViewModal
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
@@ -34,12 +34,12 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="mb-3">
-                            <label asp-for="GroupId" class="form-label">Group Type<span class="AsteriskRed">*</span></label>
-                            <select asp-for="GroupId"
+                            <label asp-for="ClientId" class="form-label">Client<span class="AsteriskRed">*</span></label>
+                            <select asp-for="ClientId"
                                     class="form-select"
-                                    asp-items="@(new SelectList(Model.GroupsList,"Value", "Text"))">
+                                    asp-items="@(new SelectList(Model.ClientsList,"Value", "Text"))">
                             </select>
-                            <span asp-validation-for="GroupId" class="text-danger"></span>
+                            <span asp-validation-for="ClientId" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-lg-3">

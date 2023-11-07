@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mSCeDoLrw1ytLZS/yESju5ZDsIU8TVeuDVIcu0pPPVE=",
+  "Hash": "OBK2rJ7YTrNnAi/uQ5zXiazNUu5mQtPJWpCUw1w1K50=",
   "Source": "InfinityWeb",
   "BasePath": "_content/InfinityWeb",
   "Mode": "Default",
@@ -1222,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\coming-soon-img.png"
+    },
+    {
+      "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\ecommerce.jpg",
+      "SourceId": "InfinityWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\",
+      "BasePath": "_content/InfinityWeb",
+      "RelativePath": "assets/images/ecommerce.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\ecommerce.jpg"
     },
     {
       "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\error.svg",

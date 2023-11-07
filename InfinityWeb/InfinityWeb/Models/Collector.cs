@@ -7,7 +7,8 @@ namespace InfinityWeb.Models
     {
         [Key]
         public Guid CollectorId { get; set; }
-        public Guid BranchId { get; set; }
+        public Guid? GroupId { get; set; }
+        public Group? Group { get; set; }
 
         [Column(TypeName = "varchar(200)")]
         public string? Address { get; set; }
@@ -21,8 +22,6 @@ namespace InfinityWeb.Models
         [Column(TypeName = "varchar(15)")]
         public string? Phone { get; set; }
 
-        public Guid UserId { get; set; }
-        
         public string? CollectionNotes { get; set; }
 
         public DateTime CreatedDate { get; set; }

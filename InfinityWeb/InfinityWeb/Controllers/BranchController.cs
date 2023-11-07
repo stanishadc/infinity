@@ -19,15 +19,25 @@ namespace InfinityWeb.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            if (HttpContext.Session.GetString("UserId") == null)
+            {
+                var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Home" });
+                return RedirectToRoute(routeValue);
+            }
+            if (HttpContext.Session.GetString("Token") == null)
+            {
+                var routeValue = new RouteValueDictionary(new { action = "Index", controller = "Home" });
+                return RedirectToRoute(routeValue);
+            }
             var data = await Get();
             return View(data);
         }
         [HttpGet]
-        public async Task<List<BranchViewModal>> Get()
+        public async Task<List<ClientBranchViewModal>> Get()
         {
             var data = await (from b in _context.Branches
-                              join g in _context.Groups on b.GroupId equals g.GroupId
-                              select new BranchViewModal
+                              join c in _context.Clients on b.ReferenceId equals c.ClientId
+                              select new ClientBranchViewModal
                               {
                                   BranchId = b.BranchId,
                                   BranchName = b.BranchName,
@@ -35,9 +45,10 @@ namespace InfinityWeb.Controllers
                                   Phone = b.Phone,
                                   Email = b.Email,
                                   Address = b.Address,
-                                  GroupId = g.GroupId,
-                                  GroupName = g.GroupName,
-                                  UpdatedDate = dataConversions.ConvertUTCtoLocal(g.UpdatedDate)
+                                  ClientId = c.ClientId,
+                                  ClientName = c.PrimaryContact,
+                                  CollectionNotes=b.CollectionNotes,
+                                  UpdatedDate = dataConversions.ConvertUTCtoLocal(b.UpdatedDate)
                               }).ToListAsync();
             return data;
         }
@@ -46,152 +57,47 @@ namespace InfinityWeb.Controllers
         {
             if (Id == Guid.Empty)
             {
-                TempData["errorMessage"] = "Invalid GroupId";
-                return RedirectToAction("Index", "Group");
+                TempData["errorMessage"] = "Invalid Branch Id";
+                return RedirectToAction("Index", "Branch");
             }
             else
             {
                 var data = await (from b in _context.Branches
-                                  join g in _context.Groups on b.GroupId equals g.GroupId
-                                  select new BranchViewModal
+                                  join c in _context.Clients on b.ReferenceId equals c.ClientId
+                                  select new ClientBranchViewModal
                                   {
                                       BranchId = b.BranchId,
                                       BranchName = b.BranchName,
-                                      CollectionNotes = b.CollectionNotes,
                                       PrimaryContact = b.PrimaryContact,
-                                      Email = b.Email,
                                       Phone = b.Phone,
+                                      Email = b.Email,
                                       Address = b.Address,
-                                      UpdatedDate = b.UpdatedDate,
-                                      GroupId = g.GroupId,
-                                      GroupName = g.GroupName
+                                      ClientId = c.ClientId,
+                                      ClientName = c.PrimaryContact,
+                                      CollectionNotes=b.CollectionNotes,
+                                      UpdatedDate = dataConversions.ConvertUTCtoLocal(b.UpdatedDate)
                                   }).Where(p => p.BranchId == Id).FirstOrDefaultAsync();
                 if (data == null)
                 {
                     TempData["errorMessage"] = "No Record Found";
-                    return RedirectToAction("Index", "Group");
+                    return RedirectToAction("Index", "Branch");
                 }
                 else
                 {
-                    data.GroupsList = await GetGroups();
+                    data.ClientsList = await GetClients();
                 }
                 return View(data);
             }
         }
-        //[HttpGet]
-        //public async Task<List<BranchViewModal>> GetByRole(string RoleName)
-        //{
-        //    var data = await (from b in _context.Branches
-        //                      join u in _context.Users on b.UserId.ToString() equals u.Id
-        //                      join ur in _context.UserRoles on u.Id equals ur.RoleId
-        //                      join r in _context.Roles on ur.RoleId equals r.Id
-        //                      select new
-        //                      {
-        //                          b.BranchId,
-        //                          b.BranchName,
-        //                          b.PrimaryContact,
-        //                          b.Phone,
-        //                          b.Email,
-        //                          b.Address,
-        //                          b.UserId,
-        //                          u.Name,
-        //                          u.IsActive,
-        //                          RoleName = r.Name,
-        //                          ur.RoleId
-        //                      }).Where(r => r.RoleName == RoleName).ToListAsync();
-        //    return data;
-        //}
-        //[HttpGet]
-        //[Route("GetUsers")]
-        //public async Task<IActionResult> GetUsers(Guid BranchId, [FromQuery] PaginationFilter filter)
-        //{
-        //    var data = await (from b in _context.Branches
-        //                      join g in _context.Groups on b.GroupId equals g.GroupId
-        //                      join u in _context.Users on b.UserId.ToString() equals u.Id
-        //                      join ur in _context.UserRoles on u.Id equals ur.RoleId
-        //                      join r in _context.Roles on ur.RoleId equals r.Id
-        //                      select new
-        //                      {
-        //                          b.BranchId,
-        //                          b.BranchName,
-        //                          b.PrimaryContact,
-        //                          b.Phone,
-        //                          b.Email,
-        //                          b.Address,
-        //                          b.UserId,
-        //                          g.GroupId,
-        //                          g.GroupName,
-        //                          u.Name,
-        //                          u.IsActive,
-        //                          RoleName = r.Name,
-        //                          ur.RoleId
-        //                      }).Where(r => r.BranchId == BranchId).ToListAsync();
-        //    var pagedResponse = _pagination.GetPagination(data, filter, Request.Path.Value, uriService);
-        //    return Ok(new { StatusCode = HttpStatusCode.OK, Data = pagedResponse });
-        //}
-        //[HttpGet]
-        //[Route("GetByBranchId")]
-        //public async Task<IActionResult> GetByBranchId(Guid BranchId)
-        //{
-        //    var data = await (from b in _context.Branches
-        //                      join g in _context.Groups on b.GroupId equals g.GroupId
-        //                      join u in _context.Users on b.UserId.ToString() equals u.Id
-        //                      join ur in _context.UserRoles on u.Id equals ur.RoleId
-        //                      join r in _context.Roles on ur.RoleId equals r.Id
-        //                      select new
-        //                      {
-        //                          b.BranchId,
-        //                          b.BranchName,
-        //                          b.PrimaryContact,
-        //                          b.Phone,
-        //                          b.Email,
-        //                          b.Address,
-        //                          b.UserId,
-        //                          g.GroupId,
-        //                          g.GroupName,
-        //                          u.Name,
-        //                          u.IsActive,
-        //                          RoleName = r.Name,
-        //                          ur.RoleId
-        //                      }).Where(r => r.BranchId == BranchId).ToListAsync();
-        //    return View(data);
-        //}
-        //[HttpGet]
-        //[Route("GetByGroupId")]
-        //public async Task<IActionResult> GetByGroupId(Guid GroupId)
-        //{
-        //    var data = await (from b in _context.Branches
-        //                      join g in _context.Groups on b.GroupId equals g.GroupId
-        //                      join u in _context.Users on b.UserId.ToString() equals u.Id
-        //                      join ur in _context.UserRoles on u.Id equals ur.RoleId
-        //                      join r in _context.Roles on ur.RoleId equals r.Id
-        //                      select new
-        //                      {
-        //                          b.BranchId,
-        //                          b.BranchName,
-        //                          b.PrimaryContact,
-        //                          b.Phone,
-        //                          b.Email,
-        //                          b.Address,
-        //                          b.UserId,
-        //                          g.GroupId,
-        //                          g.GroupName,
-        //                          u.Name,
-        //                          u.IsActive,
-        //                          RoleName = r.Name,
-        //                          ur.RoleId
-        //                      }).Where(r => r.GroupId == GroupId).ToListAsync();
-        //    return View(data);
-        //}
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            BranchViewModal branchViewModal = new BranchViewModal();
-            branchViewModal.GroupsList = await GetGroups();
+            ClientBranchViewModal branchViewModal = new ClientBranchViewModal();
+            branchViewModal.ClientsList = await GetClients();
             return View("Create", branchViewModal);
         }
         [HttpPost]
-        public IActionResult Create(BranchViewModal model)
+        public IActionResult Create(ClientBranchViewModal model)
         {
             try
             {
@@ -206,7 +112,7 @@ namespace InfinityWeb.Controllers
                     branch.CollectionNotes = model.CollectionNotes;
                     branch.Address = model.Address;
                     branch.UpdatedDate = model.UpdatedDate;
-                    branch.GroupId = model.GroupId;                    
+                    branch.ReferenceId = model.ClientId;                    
                     branch.CreatedDate = DateTime.UtcNow;
                     branch.UpdatedDate = DateTime.UtcNow;
                     _context.Add(branch);
@@ -227,7 +133,7 @@ namespace InfinityWeb.Controllers
             return RedirectToAction("Index", "Branch");
         }
         [HttpPost]
-        public IActionResult Update(Branch model)
+        public IActionResult Update(ClientBranchViewModal model)
         {
             try
             {
@@ -249,7 +155,7 @@ namespace InfinityWeb.Controllers
                         data.CollectionNotes = model.CollectionNotes;
                         data.Address = model.Address;
                         data.UpdatedDate = DateTime.UtcNow;
-                        data.GroupId = model.GroupId;
+                        data.ReferenceId = model.ClientId;
                         _context.Entry(data).State = EntityState.Modified;
                         _context.SaveChanges();
                         ModelState.Clear();
@@ -270,7 +176,7 @@ namespace InfinityWeb.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> Delete(BranchViewModal branchViewModal)
+        public async Task<IActionResult> Delete(ClientBranchViewModal branchViewModal)
         {
             try
             {
@@ -293,15 +199,15 @@ namespace InfinityWeb.Controllers
             }
             return RedirectToAction("Index", "Branch");
         }
-        private async Task<List<SelectListItem>> GetGroups()
+        private async Task<List<SelectListItem>> GetClients()
         {
-            var data = await _context.Groups.ToListAsync();
+            var data = await _context.Clients.ToListAsync();
             List<SelectListItem> list = new List<SelectListItem>();
             for (int i = 0; i < data.Count; i++)
             {
                 SelectListItem selectListItem = new SelectListItem();
-                selectListItem.Text = data[i].GroupName;
-                selectListItem.Value = data[i].GroupId.ToString();
+                selectListItem.Text = data[i].PrimaryContact;
+                selectListItem.Value = data[i].ClientId.ToString();
                 list.Add(selectListItem);
             }
             return list;

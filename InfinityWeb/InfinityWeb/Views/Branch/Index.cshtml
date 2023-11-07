@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
     Layout = "_Userlayout";
 }
-@model IEnumerable<InfinityWeb.ViewModel.BranchViewModal>
+@model IEnumerable<InfinityWeb.ViewModel.ClientBranchViewModal>
 <div class="page-content">
     <div class="container-fluid">
         <!-- start page title -->
@@ -50,7 +50,7 @@
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Branch</th>
-                                            <th scope="col">Group</th>
+                                            <th scope="col">Client</th>
                                             <th scope="col">Contact</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Phone</th>
@@ -67,7 +67,7 @@
                                             <tr>
                                                 <td>@i </td>
                                                 <td>@item.BranchName</td>
-                                                <td>@item.GroupName</td>
+                                                <td>@item.ClientName</td>
                                                 <td>@item.PrimaryContact</td>
                                                 <td>@item.Email</td>
                                                 <td>@item.Phone</td>

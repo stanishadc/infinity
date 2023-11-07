@@ -10,6 +10,6 @@ namespace InfinityWeb.Models
         [Required(ErrorMessage = "Group Type is required")]
         [Column(TypeName = "varchar(25)")]
         public string GroupTypeName { get; set; }
-        public DateTime? LastUpdated { get; set; }
+        public DateTime LastUpdated { get; set; }
     }
 }

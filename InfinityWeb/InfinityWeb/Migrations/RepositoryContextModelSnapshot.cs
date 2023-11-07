@@ -44,7 +44,42 @@ namespace InfinityWeb.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("varchar(45)");
 
-                    b.Property<Guid>("GroupId")
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<string>("PrimaryContact")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<Guid>("ReferenceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BranchId");
+
+                    b.ToTable("Branches");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.Client", b =>
+                {
+                    b.Property<Guid>("ClientId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("CollectionNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<Guid?>("GroupId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Phone")
@@ -56,11 +91,85 @@ namespace InfinityWeb.Migrations
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("BranchId");
+                    b.HasKey("ClientId");
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("Branches");
+                    b.ToTable("Clients");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.Collector", b =>
+                {
+                    b.Property<Guid>("CollectorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("CollectionNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<Guid?>("GroupId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<string>("PrimaryContact")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CollectorId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("Collectors");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.EndUser", b =>
+                {
+                    b.Property<Guid>("EndUserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("CollectionNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<Guid?>("GroupId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<string>("PrimaryContact")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("EndUserId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("EndUsers");
                 });
 
             modelBuilder.Entity("InfinityWeb.Models.Group", b =>
@@ -102,7 +211,7 @@ namespace InfinityWeb.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(25)");
 
-                    b.Property<DateTime?>("LastUpdated")
+                    b.Property<DateTime>("LastUpdated")
                         .HasColumnType("datetime2");
 
                     b.HasKey("GroupTypeId");
@@ -314,13 +423,29 @@ namespace InfinityWeb.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("InfinityWeb.Models.Branch", b =>
+            modelBuilder.Entity("InfinityWeb.Models.Client", b =>
                 {
                     b.HasOne("InfinityWeb.Models.Group", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId");
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.Collector", b =>
+                {
+                    b.HasOne("InfinityWeb.Models.Group", "Group")
+                        .WithMany()
+                        .HasForeignKey("GroupId");
+
+                    b.Navigation("Group");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.EndUser", b =>
+                {
+                    b.HasOne("InfinityWeb.Models.Group", "Group")
+                        .WithMany()
+                        .HasForeignKey("GroupId");
 
                     b.Navigation("Group");
                 });

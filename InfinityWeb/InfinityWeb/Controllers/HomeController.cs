@@ -108,11 +108,11 @@ namespace InfinityWeb.Controllers
                             SecurityStamp = Guid.NewGuid().ToString(),
                             UserName = model.Email,
                             PhoneNumber = model.PhoneNumber,
-                            Name = model.Name
+                            Name = model.Name,
                         };
                         //model.RoleName = UserRoles.Admin;
                         var result = await _userManager.CreateAsync(user, model.Password);
-
+                        model.RoleName = UserRoles.Admin;
                         if (!result.Succeeded)
                         {
                             TempData["errorMessage"] = "User creation failed! Please check user details and try again.";
@@ -122,23 +122,21 @@ namespace InfinityWeb.Controllers
                             await _roleManager.CreateAsync(new IdentityRole(model.RoleName));
                         }
                         await _userManager.AddToRoleAsync(user, model.RoleName);
-
+                        ModelState.Clear();
+                        //var bemail = Task.Factory.StartNew(() => _emailSender.SendBusinessRegisterEmail(model.Email, model.BusinessName));
+                        TempData["successMessage"] = "Account Created Successfully!";
                     }
-                    #endregion
-                    //var bemail = Task.Factory.StartNew(() => _emailSender.SendBusinessRegisterEmail(model.Email, model.BusinessName));
-                    TempData["successMessage"] = "Account Created Successfully!";
+                    #endregion                    
                 }
                 else
                 {
                     TempData["errorMessage"] = "Please check the mandatory fields";
                 }
-                
             }
             catch (Exception ex)
             {
                 TempData["errorMessage"] = "Error in creating account";
-            }
-            ModelState.Clear();
+            }            
             return View("Register");
         }
 

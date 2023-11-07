@@ -281,6 +281,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\coming-soon-img.png"
     },
     {
+      "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\ecommerce.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\ecommerce.jpg"
+    },
+    {
       "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\error.svg",
       "PackagePath": "staticwebassets\\assets\\images\\error.svg"
     },

@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<RepositoryContext>(
     options => {
-        options.UseSqlServer(configuration.GetConnectionString("DevDB"));
+        options.UseSqlServer(configuration.GetConnectionString("ProdDB"));
         options.EnableSensitiveDataLogging();
     });
 // For Identity
@@ -81,6 +81,6 @@ app.UseSession();
 app.UseRouting();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=GroupType}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

@@ -63,7 +63,7 @@
                                             <tr>
                                                 <td>@i </td>
                                                 <td>@item.GroupTypeName</td>
-                                                <td>@item.LastUpdated</td>
+                                                <td>@String.Format("{0:MM/dd/yyyy HH:MM tt}",@item.LastUpdated)</td>
                                                 <td>
                                                     <div class="hstack gap-3 fs-15">
                                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@("#EditGroupType-" + item.GroupTypeId)" data-url="@Url.Action($"Edit/{item.GroupTypeId}")">Edit</button>
