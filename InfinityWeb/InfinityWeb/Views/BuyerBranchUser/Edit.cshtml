@@ -1,0 +1,77 @@
+﻿@model InfinityWeb.ViewModel.BuyerBranchUserViewModal
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Buyer Branch Users</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a>Home</a></li>
+                            <li class="breadcrumb-item active">Edit Buyer Branch User</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (TempData["errorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade-show">
+                @TempData["errorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
+        @if (TempData["successMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade-show">
+                @TempData["successMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
+        <div class="alert alert-success">
+            <form asp-action="Update" method="post" asp-controller="BuyerBranchUser">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade-show"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mb-3">
+                            <label asp-for="BranchId" class="form-label">Branch<span class="AsteriskRed">*</span></label>
+                            <select asp-for="BranchId"
+                                    class="form-select"
+                                    asp-items="@(new SelectList(Model.BranchsList,"Value", "Text"))">
+                            </select>
+                            <span asp-validation-for="BranchId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Name<span class="AsteriskRed">*</span></label>
+                            <input type="text" class="form-control" asp-for="Name" name="Name" placeholder="Enter Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email<span class="AsteriskRed">*</span></label>
+                            <input type="text" class="form-control" asp-for="Email" name="Email" placeholder="Enter Email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="mb-3">
+                            <label asp-for="PhoneNumber" class="form-label">Phone<span class="AsteriskRed">*</span></label>
+                            <input type="text" class="form-control" asp-for="PhoneNumber" name="PhoneNumber" placeholder="Enter PhoneNumber">
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="hstack gap-2 mb-3 mt-4">
+                            <button type="submit" class="btn btn-success">Update Changes</button>
+                            <a asp-action="Index" asp-controller="BuyerBranchUser" class="btn btn-primary">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

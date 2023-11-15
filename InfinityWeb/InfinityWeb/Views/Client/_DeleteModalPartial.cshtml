@@ -1,0 +1,22 @@
+﻿@model InfinityWeb.ViewModel.ClientViewModal
+<div id="DeleteRecord-@Model.ClientId" class="modal fade" aria-hidden="true" aria-labelledBy="DeleteRecord">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0">Delete Client</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Delete" method="post" asp-controller="Client">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade-show"></div>
+                    <input type="hidden" asp-for="ClientId" />
+                    <p>Are you sure to delete this Client?</p>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success">Delete</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

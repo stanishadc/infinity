@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Userlayout";
+}
+@model IEnumerable<InfinityWeb.ViewModel.BuyerViewModal>
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Buyers</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Buyers</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (TempData["errorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade-show">
+                @TempData["errorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
+        @if (TempData["successMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade-show">
+                @TempData["successMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header align-items-center d-flex">
+                        <h4 class="card-title mb-0 flex-grow-1">Buyers</h4>
+                        <div class="flex-shrink-0">
+                            <a type="button" class="btn btn-primary" asp-action="Create" asp-controller="Buyer">Add Buyer</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <div class="table-responsive">
+                                <table class="table table-nowrap dt-responsive table-bordered display" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Group</th>
+                                            <th scope="col">Primary Contact</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Last Updated</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblBody">
+                                        @{
+                                            var i = 1;
+                                        }
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@i </td>
+                                                <td>@item.GroupName</td>
+                                                <td>@item.PrimaryContact</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.Phone</td>
+                                                <td>@String.Format("{0:MM/dd/yyyy HH:MM tt}",@item.UpdatedDate)</td>
+                                                <td>
+                                                    <div class="hstack gap-3 fs-15">
+                                                        <a asp-action="Edit" class="btn btn-primary" asp-route-Id="@item.BuyerId">Edit</a>
+                                                        <a asp-action="Index" asp-controller="ClientBuyer" class="btn btn-success" asp-route-Id="@item.BuyerId">View Branches</a>
+                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@("#DeleteRecord-" + item.BuyerId)" data-url="@Url.Action($"Delete/{item.BuyerId}")">Delete</button>
+                                                        @await Html.PartialAsync("_DeleteModalPartial",item)
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            i++;
+                                        }
+                                    </tbody>
+                                </table>
+                                <!-- end table -->
+                            </div>
+                            <!-- end table responsive -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
