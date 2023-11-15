@@ -1,0 +1,22 @@
+﻿@model InfinityWeb.ViewModel.CollectorBranchUserViewModal
+<div id="DeleteCollectorBranchUser-@Model.Id" class="modal fade" aria-hidden="true" aria-labelledBy="DeleteRecord">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0">Delete Collector Branch User</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Delete" method="post" asp-controller="CollectorBranchUser">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade-show"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <p>Are you sure to delete this Collector Branch User?</p>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success">Delete</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
