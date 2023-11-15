@@ -16,6 +16,202 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Developerscode\Projects\upwork_Ian\InfinityWeb\InfinityWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Branch/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranchUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hVc2VyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranchUser/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hVc2VyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranchUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hVc2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranchUser/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hVc2VyXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranch/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/BuyerBranch/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJCcmFuY2hcX0RlbGV0ZU1vZGFsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Buyer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Buyer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Buyer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Buyer/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnV5ZXJcX0RlbGV0ZU1vZGFsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranchUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranchUser/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranchUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranchUser/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoVXNlclxfRGVsZXRlTW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranch/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/ClientBranch/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50QnJhbmNoXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Client/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Client/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Client/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Client/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranchUser/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranchUser/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranchUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranchUser/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoVXNlclxfRGVsZXRlTW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranch/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranch/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranch/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/CollectorBranch/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yQnJhbmNoXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Collector/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Collector/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Collector/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Collector/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sbGVjdG9yXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/GroupType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBUeXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/GroupType/_CreateModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBUeXBlXF9DcmVhdGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/GroupType/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBUeXBlXF9EZWxldGVNb2RhbFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/GroupType/_EditModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBUeXBlXF9FZGl0TW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Group/_DeleteModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcX0RlbGV0ZU1vZGFsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,8 +220,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Shared/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Developerscode/Projects/upwork_Ian/InfinityWeb/InfinityWeb/Views/Shared/_ValidationScriptsPartial.cshtml]

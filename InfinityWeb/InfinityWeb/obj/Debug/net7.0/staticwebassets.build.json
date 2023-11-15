@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OBK2rJ7YTrNnAi/uQ5zXiazNUu5mQtPJWpCUw1w1K50=",
+  "Hash": "qdtakQB9FmaKBrDak+8B9/YnMlv9pSi/1i4rTdUQCeU=",
   "Source": "InfinityWeb",
   "BasePath": "_content/InfinityWeb",
   "Mode": "Default",
@@ -1290,6 +1290,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\homebg.jpg",
+      "SourceId": "InfinityWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\",
+      "BasePath": "_content/InfinityWeb",
+      "RelativePath": "assets/images/homebg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\homebg.jpg"
     },
     {
       "Identity": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\logo-dark.png",

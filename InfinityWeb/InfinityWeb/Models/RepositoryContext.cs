@@ -16,7 +16,8 @@ namespace InfinityWeb.Models
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Collector> Collectors { get; set; }
-        public DbSet<EndUser> EndUsers { get; set; }
-        public DbSet<Business> Businesses { get; set; }
+        public DbSet<Buyer> Buyers { get; set; }
+        public DbSet<BranchUser> BranchUsers { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }

@@ -9,6 +9,7 @@ namespace InfinityWeb.Models
         [Column(TypeName = "varchar(45)")]
         public string? Name { get; set; }
         public bool? IsActive { get; set; }
+        public Guid? BranchId { get; set; }
     }
     public class Login
     {

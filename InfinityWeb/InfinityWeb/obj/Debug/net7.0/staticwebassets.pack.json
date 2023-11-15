@@ -297,6 +297,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\favicon.ico"
     },
     {
+      "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\homebg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\homebg.jpg"
+    },
+    {
       "Id": "D:\\Developerscode\\Projects\\upwork_Ian\\InfinityWeb\\InfinityWeb\\wwwroot\\assets\\images\\logo-dark.png",
       "PackagePath": "staticwebassets\\assets\\images\\logo-dark.png"
     },

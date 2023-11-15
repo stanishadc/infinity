@@ -61,6 +61,104 @@ namespace InfinityWeb.Migrations
                     b.ToTable("Branches");
                 });
 
+            modelBuilder.Entity("InfinityWeb.Models.BranchUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("BranchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BranchUsers");
+                });
+
+            modelBuilder.Entity("InfinityWeb.Models.Buyer", b =>
+                {
+                    b.Property<Guid>("BuyerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("CollectionNotes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<Guid?>("GroupId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<string>("PrimaryContact")
+                        .HasColumnType("varchar(45)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BuyerId");
+
+                    b.HasIndex("GroupId");
+
+                    b.ToTable("Buyers");
+                });
+
             modelBuilder.Entity("InfinityWeb.Models.Client", b =>
                 {
                     b.Property<Guid>("ClientId")
@@ -135,43 +233,6 @@ namespace InfinityWeb.Migrations
                     b.ToTable("Collectors");
                 });
 
-            modelBuilder.Entity("InfinityWeb.Models.EndUser", b =>
-                {
-                    b.Property<Guid>("EndUserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("CollectionNotes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("varchar(45)");
-
-                    b.Property<Guid?>("GroupId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("varchar(15)");
-
-                    b.Property<string>("PrimaryContact")
-                        .HasColumnType("varchar(45)");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("EndUserId");
-
-                    b.HasIndex("GroupId");
-
-                    b.ToTable("EndUsers");
-                });
-
             modelBuilder.Entity("InfinityWeb.Models.Group", b =>
                 {
                     b.Property<Guid>("GroupId")
@@ -219,6 +280,32 @@ namespace InfinityWeb.Migrations
                     b.ToTable("GroupTypes");
                 });
 
+            modelBuilder.Entity("InfinityWeb.Models.Item", b =>
+                {
+                    b.Property<Guid>("ItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double?>("CO2")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ItemDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ItemName")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<double?>("OZone")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ItemId");
+
+                    b.ToTable("Items");
+                });
+
             modelBuilder.Entity("InfinityWeb.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -226,6 +313,9 @@ namespace InfinityWeb.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<Guid?>("BranchId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -423,6 +513,15 @@ namespace InfinityWeb.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("InfinityWeb.Models.Buyer", b =>
+                {
+                    b.HasOne("InfinityWeb.Models.Group", "Group")
+                        .WithMany()
+                        .HasForeignKey("GroupId");
+
+                    b.Navigation("Group");
+                });
+
             modelBuilder.Entity("InfinityWeb.Models.Client", b =>
                 {
                     b.HasOne("InfinityWeb.Models.Group", "Group")
@@ -433,15 +532,6 @@ namespace InfinityWeb.Migrations
                 });
 
             modelBuilder.Entity("InfinityWeb.Models.Collector", b =>
-                {
-                    b.HasOne("InfinityWeb.Models.Group", "Group")
-                        .WithMany()
-                        .HasForeignKey("GroupId");
-
-                    b.Navigation("Group");
-                });
-
-            modelBuilder.Entity("InfinityWeb.Models.EndUser", b =>
                 {
                     b.HasOne("InfinityWeb.Models.Group", "Group")
                         .WithMany()
